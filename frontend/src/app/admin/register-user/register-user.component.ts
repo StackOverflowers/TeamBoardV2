@@ -58,8 +58,7 @@ export class RegisterUserComponent implements OnInit {
       this._userService.registerAdmin(this.registerData).subscribe(
         (res) =>{
           console.log(res);
-          localStorage.setItem('token' , res.jwtToken);
-          this._router.navigate(['/saveTask']);
+          this._router.navigate(['/listUser']);
           this.message = 'Successfull user registration';
           this.openSnackBarSuccesfull();
           this.registerData = {};
